@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@tanstack/react-router';
 import { Wallet, PlusCircle } from 'lucide-react';
 import { ModeToggle } from '@/components/mode-toggle';
 
@@ -43,9 +43,9 @@ export function Home() {
                 </div>
                 <h2 className="text-2xl font-semibold text-foreground mb-2">{item.title}</h2>
                 <p className="text-muted-foreground mb-6 flex-grow">{item.description}</p>
-                <button 
+                <button
                   className="w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center gap-2"
-                  onClick={() => navigate(item.path)}
+                  onClick={() => navigate({ to: item.path })}
                 >
                   <span>Open {item.title.split(' ')[0]}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -62,28 +62,7 @@ export function Home() {
           
           <div className="flex flex-col items-center justify-center space-y-1">
             <p className="text-xs text-muted-foreground tracking-wider mb-3">POWERED BY</p>
-            <div className="flex items-center justify-center gap-5">
-              <a 
-                href="https://meshjs.dev" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center h-7 hover:opacity-80 transition-opacity"
-                aria-label="Visit Mesh website"
-              >
-                <img 
-                  src="/meshlogo-with-title-white.svg" 
-                  alt="Mesh" 
-                  className="h-7 dark:block hidden object-contain"
-                  style={{ width: 'auto' }}
-                />
-                <img 
-                  src="/meshlogo-with-title-black.svg" 
-                  alt="Mesh" 
-                  className="h-7 dark:hidden block object-contain"
-                  style={{ width: 'auto' }}
-                />
-              </a>
-              <div className="text-lg font-light text-muted-foreground opacity-50">×</div>
+            <div className="flex items-center justify-center gap-5">              
               <a 
                 href="https://eddalabs.io" 
                 target="_blank" 

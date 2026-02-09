@@ -1,4 +1,4 @@
-# 🚀 MESH - EDDA - Midnight Starter Template
+# 🚀 EDDA - Midnight Starter Template
 - A starter template for building on Midnight Network with React frontend and smart contract integration.
 - **[Live Demo → counter.nebula.builders](https://counter.nebula.builders)**
 
@@ -10,6 +10,11 @@
 - [Compact](https://docs.midnight.network/relnotes/compact-tools) (Midnight developer tools)
 - [Lace](https://chromewebstore.google.com/detail/hgeekaiplokcnmakghbdfbgnlfheichg?utm_source=item-share-cb) (Browser wallet extension)
 - [Faucet](https://faucet.preview.midnight.network/) (Preview Network Faucet)
+
+## Known Issues
+
+- There’s a not-yet-fixed bug in the arm64 Docker image of the proof server.
+- Workaround: Use Bricktower proof server. **bricktowers/proof-server:6.1.0-alpha.6**
 
 ## 🛠️ Setup
 
@@ -89,4 +94,4 @@ compact check  # Should show latest version
    ```
 ---
 
-<div align="center"><p>Built with ❤️ by <a href="https://meshjs.dev">Mesh</a> × <a href="https://eddalabs.io">Edda Labs</a></p></div>
+<div align="center"><p>Built with ❤️ by <a href="https://eddalabs.io">Edda Labs</a></p></div>
