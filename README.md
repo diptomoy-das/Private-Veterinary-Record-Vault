@@ -20,6 +20,7 @@
 
 ## 📋 Table of Contents
 
+- [Screenshots](#-screenshots)
 - [What Is This?](#-what-is-this)
 - [How It Works](#-how-it-works)
 - [Key Features](#-key-features)
@@ -29,6 +30,28 @@
 - [Available Commands](#-available-commands)
 - [Tech Stack](#-tech-stack)
 - [License](#-license)
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/cinematic-animation.png" alt="Cinematic Scroll Animation" width="100%" />
+  <br/>
+  <em>Cinematic scroll-driven animation — 150-frame sequence powered by HTML5 Canvas</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-overview.png" alt="DApp Dashboard" width="100%" />
+  <br/>
+  <em>DApp Dashboard — Register pets, verify vaccinations, and view transaction history</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/wallet-connected.png" alt="Wallet Connected" width="100%" />
+  <br/>
+  <em>Wallet connected — pet registered on-chain with confirmed transactions in the log</em>
+</p>
 
 ---
 
