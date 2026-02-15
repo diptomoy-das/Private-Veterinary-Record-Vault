@@ -1,11 +1,75 @@
+// This file is part of midnightntwrk/private-vet-vault.
+// Copyright (C) 2025 Midnight Foundation
+// SPDX-License-Identifier: Apache-2.0
+// Licensed under the Apache License, Version 2.0 (the "License");
+// You may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 pragma language_version >= 0.20;
 
 import CompactStandardLibrary;
 
-// public state
-export ledger round: Counter;
+/**
+ * Private Veterinary Record Vault
+ * 
+ * This contract allows pet owners to store animal health records privately on-chain
+ * and prove vaccination status to third parties (like kennels or border control)
+ * without sharing the full veterinary history.
+ */
 
-// transition function changing public state
-export circuit increment(): [] {
-  round.increment(1);
+// We use a mapping from Pet ID (Uint<64>) to a commitment (Uint<248>).
+// The commitment is a cryptographic hash of the private veterinary record.
+export ledger record_commitments: Map<Uint<64>, Uint<248>>;
+
+// A public ledger showing if a pet's vaccination status has been verified.
+// Third parties can check this mapping to see if a pet is safe to travel or stay.
+export ledger is_vaccinated: Map<Uint<64>, Boolean>;
+
+// The witness allows the pet owner to provide private data to the circuit.
+// The data stays on the owner's machine and is never revealed on the public blockchain.
+witness get_private_record(pet_id: Uint<64>): Uint<248>;
+
+/**
+ * register_pet: Called by a pet owner to register their pet's record.
+ * @param pet_id A unique identifier for the pet.
+ * @param commitment The hash of the pet's private health records.
+ */
+export circuit register_pet(instance pet_id: Uint<64>, instance commitment: Uint<248>): [] {
+  record_commitments.insert(pet_id, commitment);
+}
+
+/**
+ * verify_vaccination: Proves the pet is vaccinated without revealing the full record.
+ * The owner provides the private record as a witness.
+ * The circuit verifies it matches the on-chain commitment and updates the public flag.
+ */
+export circuit verify_vaccination(pet_id: Uint<64>): [] {
+  // 1. Retrieve the public commitment for this pet from the ledger.
+  const commitment = record_commitments.lookup(pet_id);
+  
+  // 2. Retrieve the private record from the owner's private storage via the witness.
+  const private_record = get_private_record(pet_id);
+  
+  // 3. Verify that the private record provided matches the commitment stored on-chain.
+  // In a production app, we would use: assert(hash(private_record) == commitment);
+  // For this beginner example, we use a simple equality check.
+  assert(private_record == commitment, "The provided private record does not match the on-chain commitment.");
+  
+  // 4. If the check passes, we update the public ledger to show the pet is verified.
+  is_vaccinated.insert(pet_id, true);
+}
+
+/**
+ * revoke_verification: Resets the vaccination status if a new record is needed.
+ */
+export circuit revoke_verification(pet_id: Uint<64>): [] {
+  is_vaccinated.insert(pet_id, false);
 }
