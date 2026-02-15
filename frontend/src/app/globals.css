@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+@theme inline {
+  --color-base-dark: #0b0b0b;
+  --color-accent-metal: #B71C1C;
+  --color-neutral-carbon: #2a2a2a;
+  --color-white: #ffffff;
+  --color-white-muted: rgba(255, 255, 255, 0.6);
+  --color-white-subtle: rgba(255, 255, 255, 0.08);
+  --color-accent-glow: rgba(183, 28, 28, 0.4);
+
+  --font-heading: var(--font-orbitron);
+  --font-body: var(--font-rajdhani);
+}
+
+/* ── Global Resets ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-base-dark);
+  color: var(--color-white);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-carbon);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-metal);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-accent-metal);
+  color: var(--color-white);
+}
+
+/* ── Utility Classes ── */
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.text-accent {
+  color: var(--color-accent-metal);
+}
+
+.glass {
+  background: rgba(11, 11, 11, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── HUD Scanline Effect ── */
+.hud-scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.01) 2px,
+    rgba(255, 255, 255, 0.01) 4px
+  );
+  pointer-events: none;
+}
+
+/* ── Glow Pulse ── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}

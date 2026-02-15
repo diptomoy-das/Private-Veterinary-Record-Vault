@@ -6,7 +6,7 @@
   "workspaces": [
     "vet-cli",
     "vet-contract",
-    "frontend-vite-react"
+    "frontend"
   ],
   "scripts": {
     "compact": "turbo run compact",
