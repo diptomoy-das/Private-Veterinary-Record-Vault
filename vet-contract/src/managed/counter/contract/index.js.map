@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../",
+  "sources": ["src/counter.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAeA;;;;;;;;;;;;;MA6BA,AAAA,YAEC;;;;;cAF2B,QAAgB;cAAE,YAAqB;;;;;;;;;;;;;;;;;;;;;;;;;yCAAvC,QAAgB,+BAAE,YAAqB;;;;;;;;;8CAAvC,QAAgB;8CAAE,YAAqB;;;OAElE;MAOD,AAAA,kBAcC;;;;;cAdiC,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;;;oDAAhB,QAAgB;;;OAcjD;MAKD,AAAA,mBAEC;;;;;cAFkC,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;;;qDAAhB,QAAgB;;;OAElD;;;;;;;GACA;EA5DD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAcA;;;;;;;;;;yEAA2D;IAI3D;;;;;;;;;;yEAAoD;;;;;;;GA0CnD;EAtCD,AAAA,qBAAwD,4BAA7B,QAAgB;;0DAA3C,kBAAwD;6EAA7B,QAAgB;;;;;;;;;;;;;;GAAa;EAOxD,AAAA,eAEC,4BAF2B,QAAgB,EAAE,YAAqB;IACjE;;;;;;;;;;2HAAmC,QAAM;;;2HAAY,YAAU;;;wEAA7C;;GACnB;EAOD,AAAA,qBAcC,4BAdiC,QAAgB;UAE1C,YAAwD,2BAA3C;;;;;;;;;;;;;;4IAAmC,QAAM;;;sHAAvB;UAG/B,gBAA2C;;wDAAP,QAAM;0CAKzC,gBAAc,EAAI,YAAU;;IAGnC;;;;;;;;;;2HAA8B,QAAM;;;;;;wEAAvB;;GACd;EAKD,AAAA,sBAEC,4BAFkC,QAAgB;IACjD;;;;;;;;;;2HAA8B,QAAM;;;;;;wEAAvB;;GACd;;;;;;;;;;;;;;;;;;;;IA7CD;;;;;uCAAA;;;;;;;;;;;;;;;;4GAA2D;;;;;;uCAA3D;;;;;;;;;;;;4GAA2D;;;;;;;;;;;;;;uCAA3D;;;;;;;;;;;;;;;4GAA2D;;;;;;;;;;;;;;uCAA3D;;;;;;;;;;;;;;;;;4GAA2D;;;;;;;;;KAAA;IAI3D;;;;;uCAAA;;;;;;;;;;;;;;;;4GAAoD;;;;;;uCAApD;;;;;;;;;;;;4GAAoD;;;;;;;;;;;;;;uCAApD;;;;;;;;;;;;;;;4GAAoD;;;;;;;;;;;;;;uCAApD;;;;;;;;;;;;;;;;;4GAAoD;;;;;;;;;KAAA;;;;;;;;;;;;"
+}

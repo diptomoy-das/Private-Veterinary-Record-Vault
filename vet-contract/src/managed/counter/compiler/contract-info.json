@@ -1,0 +1,85 @@
+{
+  "circuits": [
+    {
+      "name": "register_pet",
+      "pure": false,
+      "arguments": [
+        {
+          "name": "pet_id",
+          "type": {
+            "type-name": "Uint",
+            "maxval": 18446744073709551615
+          }
+        },
+        {
+          "name": "commitment",
+          "type": {
+            "type-name": "Uint",
+            "maxval": 452312848583266388373324160190187140051835877600158453279131187530910662655
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    },
+    {
+      "name": "verify_vaccination",
+      "pure": false,
+      "arguments": [
+        {
+          "name": "pet_id",
+          "type": {
+            "type-name": "Uint",
+            "maxval": 18446744073709551615
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    },
+    {
+      "name": "revoke_verification",
+      "pure": false,
+      "arguments": [
+        {
+          "name": "pet_id",
+          "type": {
+            "type-name": "Uint",
+            "maxval": 18446744073709551615
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "name": "get_private_record",
+      "arguments": [
+        {
+          "name": "pet_id",
+          "type": {
+            "type-name": "Uint",
+            "maxval": 18446744073709551615
+          }
+        }
+      ],
+      "result type": {
+        "type-name": "Uint",
+        "maxval": 452312848583266388373324160190187140051835877600158453279131187530910662655
+      }
+    }
+  ],
+  "contracts": [
+  ]
+}
